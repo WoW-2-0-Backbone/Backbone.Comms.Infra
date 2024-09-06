@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.Infra.Abstractions", "Backbone.Comms.Infra.Abstractions\Backbone.Comms.Infra.Abstractions.csproj", "{05D2A860-BEA0-48EA-A578-5223BB4C9DF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.Infra.Mediator.MediatR", "Backbone.Comms.Infra.Mediator.MediatR\Backbone.Comms.Infra.Mediator.MediatR.csproj", "{4F9ECDAF-ADB6-4C4F-945D-F62EEEAF4888}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.Infra.Mediator.MassTransit", "Backbone.Comms.Infra.Mediator.MassTransit\Backbone.Comms.Infra.Mediator.MassTransit.csproj", "{1AEDEA88-B6AA-4476-87D2-07A6B21410EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{05D2A860-BEA0-48EA-A578-5223BB4C9DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05D2A860-BEA0-48EA-A578-5223BB4C9DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05D2A860-BEA0-48EA-A578-5223BB4C9DF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F9ECDAF-ADB6-4C4F-945D-F62EEEAF4888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F9ECDAF-ADB6-4C4F-945D-F62EEEAF4888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F9ECDAF-ADB6-4C4F-945D-F62EEEAF4888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F9ECDAF-ADB6-4C4F-945D-F62EEEAF4888}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AEDEA88-B6AA-4476-87D2-07A6B21410EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AEDEA88-B6AA-4476-87D2-07A6B21410EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AEDEA88-B6AA-4476-87D2-07A6B21410EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AEDEA88-B6AA-4476-87D2-07A6B21410EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

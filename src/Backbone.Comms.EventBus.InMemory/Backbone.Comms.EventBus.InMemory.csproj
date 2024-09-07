@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Title>WoW2.Backbone.Comms.EventBus.InMemory</Title>
+        <PackageId>WoW2.Backbone.Comms.EventBus.InMemory</PackageId>
+        <Description>In-memory implementation of the Event Bus for communication infrastructure</Description>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageTags>event-bus, in-memory, infrastructure</PackageTags>
+        <Version>8.0.0-alpha.2</Version>
+        <Authors>WoW 2.0 Team</Authors>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.EventBus.InMemory</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.EventBus.InMemory</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageIcon>wow2.png</PackageIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="wow2.png" Pack="true" PackagePath=""/>
+        <None Include="README.md" Pack="true" PackagePath=""/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MassTransit" Version="8.2.2"/>
+        <PackageReference Include="WoW2.Backbone.Comms.Infra.Abstractions" Version="8.0.0-alpha.1"/>
+    </ItemGroup>
+
+</Project>

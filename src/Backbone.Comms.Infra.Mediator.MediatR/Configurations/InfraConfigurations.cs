@@ -5,26 +5,28 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Backbone.Comms.Infra.Mediator.MediatR.Configurations;
 
 /// <summary>
-/// Provides extension methods to configure the MediatR pipeline in the infrastructure layer.
+/// Provides extension methods to configure the mediator pipeline using MediatR.
 /// </summary>
 public static class InfraConfigurations
 {
     /// <summary>
-    /// Configures MediatR as Mediator pipeline with the provided behaviors and assemblies to scan for handlers. 
+    /// Configures MediatR as a mediator pipeline with the provided behaviors and assemblies to scan for handlers. 
     /// </summary>
     /// <param name="services">The service collection to add MediatR to.</param>
     /// <param name="pipelineBehaviors">An array of behaviors to be added to the MediatR pipeline.</param>
     /// <param name="assemblies">An array of assemblies to scan for MediatR handlers.</param>
     public static void AddMediatorWithMediatR(
         this IServiceCollection services,
-        Type[] pipelineBehaviors,
-        params Assembly[] assemblies)
+        Assembly[] assemblies,
+        Type[]? pipelineBehaviors = default
+    )
     {
         services.AddMediatR(configuration =>
         {
             // Register each pipeline behavior from the provided array
-            foreach (var behavior in pipelineBehaviors)
-                configuration.AddBehavior(typeof(IPipelineBehavior<,>), behavior);
+            if (pipelineBehaviors is not null)
+                foreach (var behavior in pipelineBehaviors)
+                    configuration.AddBehavior(typeof(IPipelineBehavior<,>), behavior);
 
             // Register services from the provided assemblies
             configuration.RegisterServicesFromAssemblies(assemblies);

@@ -10,7 +10,7 @@
         <Description>MassTransit implementation for Mediator pipeline</Description>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageTags>communication, infrastructure, masstransit, mediator</PackageTags>
-        <Version>8.0.0-alpha.0</Version>
+        <Version>8.0.0-alpha.1</Version>
         <Authors>WoW 2.0 Team</Authors>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.Infra.Mediator.MassTransit</PackageProjectUrl>

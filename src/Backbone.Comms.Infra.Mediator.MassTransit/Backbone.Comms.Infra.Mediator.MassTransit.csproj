@@ -10,7 +10,7 @@
         <Description>MassTransit implementation for Mediator pipeline</Description>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageTags>communication, infrastructure, masstransit, mediator</PackageTags>
-        <Version>8.0.0-alpha.1</Version>
+        <Version>8.0.0-alpha.2</Version>
         <Authors>WoW 2.0 Team</Authors>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.Infra.Mediator.MassTransit</PackageProjectUrl>
@@ -20,17 +20,17 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <None Include="wow2.png" Pack="true" PackagePath=""/>
+        <None Include="README.md" Pack="true" PackagePath=""/>
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="MassTransit" Version="8.2.2" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="WoW2.Backbone.Comms.Infra.Abstractions" Version="8.0.0-alpha.1"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <None Include="wow2.png" Pack="true" PackagePath=""/>
-        <None Include="README.md" Pack="true" PackagePath=""/>
+        <PackageReference Include="WoW2.Backbone.Comms.Infra.Abstractions" Version="8.0.0-alpha.7"/>
     </ItemGroup>
 
 </Project>

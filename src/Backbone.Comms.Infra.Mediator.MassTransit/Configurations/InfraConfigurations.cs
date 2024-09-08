@@ -9,7 +9,7 @@ namespace Backbone.Comms.Infra.Mediator.MassTransit.Configurations;
 public static class InfraConfigurations
 {
     /// <summary>
-    /// Configures MassTransit as mediator pipeline allowing customization of bus configuration and in-memory bus configuration. 
+    /// Configures MassTransit as a mediator pipeline allowing customization of bus configuration and in-memory bus configuration. 
     /// </summary>
     /// <param name="services">The service collection to add MassTransit to.</param>
     /// <param name="busConfiguration">The bus configuration.</param>

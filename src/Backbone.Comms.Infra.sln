@@ -6,9 +6,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.Infra.Mediat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.Infra.Mediator.MassTransit", "Backbone.Comms.Infra.Mediator.MassTransit\Backbone.Comms.Infra.Mediator.MassTransit.csproj", "{1AEDEA88-B6AA-4476-87D2-07A6B21410EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.EventBus.InMemory", "Backbone.Comms.EventBus.InMemory\Backbone.Comms.EventBus.InMemory.csproj", "{13E10A56-0DC1-4D16-A4C6-354E3CDD61D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.Infra.EventBus.InMemory", "Backbone.Comms.Infra.EventBus.InMemory\Backbone.Comms.Infra.EventBus.InMemory.csproj", "{13E10A56-0DC1-4D16-A4C6-354E3CDD61D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.EventBus.RabbitMq", "Backbone.Comms.EventBus.RabbitMq\Backbone.Comms.EventBus.RabbitMq.csproj", "{13FCD2A5-0CC4-49F9-B843-2FC9AABB7BF2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.Infra.EventBus.RabbitMq", "Backbone.Comms.Infra.EventBus.RabbitMq\Backbone.Comms.Infra.EventBus.RabbitMq.csproj", "{13FCD2A5-0CC4-49F9-B843-2FC9AABB7BF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

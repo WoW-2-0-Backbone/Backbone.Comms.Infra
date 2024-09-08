@@ -5,12 +5,12 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <Title>WoW2.Backbone.Comms.EventBus.InMemory</Title>
-        <PackageId>WoW2.Backbone.Comms.EventBus.InMemory</PackageId>
-        <Description>In-memory implementation of the Event Bus for communication infrastructure</Description>
+        <Title>WoW2.Backbone.Comms.Infra.EventBus.InMemory</Title>
+        <PackageId>WoW2.Backbone.Comms.Infra.EventBus.InMemory</PackageId>
+        <Description>Event bus implementation with In-Memory Bus</Description>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageTags>event-bus, in-memory, infrastructure</PackageTags>
-        <Version>8.0.0-alpha.2</Version>
+        <Version>8.0.0-alpha.0</Version>
         <Authors>WoW 2.0 Team</Authors>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.EventBus.InMemory</PackageProjectUrl>
@@ -26,7 +26,10 @@
 
     <ItemGroup>
         <PackageReference Include="MassTransit" Version="8.2.2"/>
-        <PackageReference Include="WoW2.Backbone.Comms.Infra.Abstractions" Version="8.0.0-alpha.1"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="WoW2.Backbone.Comms.Infra.Abstractions" Version="8.0.0-alpha.7"/>
     </ItemGroup>
 
 </Project>

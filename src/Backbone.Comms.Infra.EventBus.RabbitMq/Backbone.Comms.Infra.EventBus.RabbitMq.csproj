@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Title>WoW2.Backbone.Comms.Infra.EventBus.RabbitMq</Title>
+        <PackageId>WoW2.Backbone.Comms.Infra.EventBus.RabbitMq</PackageId>
+        <Description>Event bus implementation with RabbitMQ</Description>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageTags>event-bus, rabbitmq, communication, infra</PackageTags>
+        <Version>8.0.0-alpha.0</Version>
+        <Authors>WoW 2.0 Team</Authors>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.Infra.EventBus.RabbitMq</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.Infra.EventBus.RabbitMq</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageIcon>wow2.png</PackageIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="wow2.png" Pack="true" PackagePath=""/>
+        <None Include="README.md" Pack="true" PackagePath=""/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.2"/>
+        <PackageReference Include="RabbitMQ.Client" Version="7.0.0-rc.8"/>
+        <PackageReference Include="MassTransit" Version="8.2.2"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="WoW2.Backbone.Comms.Infra.Abstractions" Version="8.0.0-alpha.7"/>
+        <PackageReference Include="WoW2.Backbone.General.Serialization.Json.Abstractions" Version="8.0.0-alpha.4"/>
+    </ItemGroup>
+
+</Project>

@@ -3,7 +3,7 @@ using Backbone.Comms.Infra.Abstractions.Events;
 using MassTransit;
 using MediatR;
 
-namespace Backbone.Comms.EventBus.InMemory.Brokers;
+namespace Backbone.Comms.Infra.EventBus.InMemory.Brokers;
 
 /// <summary>
 /// Provides event bus functionality using in-memory event bus with MassTransit

@@ -1,4 +1,5 @@
 using Backbone.Comms.Infra.Abstractions.Commands;
+using Backbone.Comms.Infra.Abstractions.Events;
 using Backbone.Comms.Infra.Abstractions.Queries;
 
 namespace Backbone.Comms.Infra.Abstractions.Brokers;
@@ -24,7 +25,7 @@ public interface IMediatorBroker
     ) where TCommand : ICommand<TResponse>;
 
     /// <summary>
-    /// Sends a command asynchronously without expecting a response.
+    /// Sends a command without expecting a response.
     /// </summary>
     /// <typeparam name="TCommand">The type of the command to be executed.</typeparam>
     /// <param name="command">The command to be sent.</param>
@@ -37,7 +38,7 @@ public interface IMediatorBroker
     ) where TCommand : ICommand;
 
     /// <summary>
-    /// Sends a query asynchronously and returns a response.
+    /// Sends a query and returns a response.
     /// </summary>
     /// <typeparam name="TQuery">The type of the query to be executed.</typeparam>
     /// <typeparam name="TResponse">The type of the response returned by the query handler.</typeparam>
@@ -52,15 +53,28 @@ public interface IMediatorBroker
     ) where TQuery : IQuery<TResponse>;
 
     /// <summary>
-    /// Sends a query asynchronously without expecting a response.
+    /// Sends a query without expecting a response.
     /// </summary>
     /// <typeparam name="TQuery">The type of the query to be executed.</typeparam>
-    /// <param name="query">The query to be sent.</param>
+    /// <param name="eventContext">The query to be sent.</param>
     /// <param name="queryOptions">The options to customize the execution.</param>
     /// <param name="cancellationToken">A token to cancel the operation.</param>
     ValueTask SendAsync<TQuery>(
-        TQuery query,
+        TQuery eventContext,
         QueryOptions queryOptions = default,
         CancellationToken cancellationToken = default
     ) where TQuery : IQuery;
+
+    /// <summary>
+    /// Sends an event without expecting a response.
+    /// </summary>
+    /// <typeparam name="TEvent">The type of the query to be executed.</typeparam>
+    /// <param name="eventContext">The query to be sent.</param>
+    /// <param name="eventOptions">The options to customize the execution.</param>
+    /// <param name="cancellationToken">A token to cancel the operation.</param>
+    ValueTask SendAsync<TEvent>(
+        TEvent eventContext,
+        EventOptions eventOptions = default,
+        CancellationToken cancellationToken = default
+    ) where TEvent : IEvent;
 }

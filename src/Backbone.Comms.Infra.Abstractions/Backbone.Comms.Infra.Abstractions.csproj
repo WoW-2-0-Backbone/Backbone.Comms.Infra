@@ -10,7 +10,7 @@
         <Description>Abstractions for communication infrastructure</Description>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageTags>communication, infrastructure, abstractions, mediatr, masstransit</PackageTags>
-        <Version>8.0.0-alpha.1</Version>
+        <Version>8.0.0-alpha.7</Version>
         <Authors>WoW 2.0 Team</Authors>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.Infra.Abstractions</PackageProjectUrl>
@@ -20,13 +20,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="MassTransit.Abstractions" Version="8.2.5"/>
-        <PackageReference Include="MediatR" Version="12.4.0"/>
+        <None Include="wow2.png" Pack="true" PackagePath=""/>
+        <None Include="README.md" Pack="true" PackagePath=""/>
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="wow2.png" Pack="true" PackagePath=""/>
-        <None Include="README.md" Pack="true" PackagePath=""/>
+        <PackageReference Include="MassTransit.Abstractions" Version="8.2.5"/>
+        <PackageReference Include="MediatR" Version="12.4.0"/>
     </ItemGroup>
 
 </Project>

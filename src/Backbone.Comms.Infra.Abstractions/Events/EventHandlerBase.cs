@@ -9,8 +9,17 @@ namespace Backbone.Comms.Infra.Abstractions.Events;
 /// <typeparam name="TEvent"></typeparam>
 public abstract class EventHandlerBase<TEvent> : IEventHandler<TEvent> where TEvent : class, INotification
 {
+    /// <summary>
+    /// Handles the event from MediatR pipeline.
+    /// </summary>
+    /// <param name="notification">Event to handle</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation.</param>
     public async Task Handle(TEvent notification, CancellationToken cancellationToken) => await HandleAsync(notification, cancellationToken);
 
+    /// <summary>
+    /// Handles the event from MassTransit pipeline.
+    /// </summary>
+    /// <param name="context">Event to handle</param>
     public async Task Consume(ConsumeContext<TEvent> context) => await HandleAsync(context.Message, context.CancellationToken);
 
     /// <summary>

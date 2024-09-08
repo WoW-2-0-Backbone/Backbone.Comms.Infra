@@ -5,16 +5,16 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <Title>WoW2.Backbone.Comms.Infra.Mediator.MassTransit</Title>
-        <PackageId>WoW2.Backbone.Comms.Infra.Mediator.MassTransit</PackageId>
-        <Description>MassTransit implementation for Mediator pipeline</Description>
+        <Title>WoW2.Backbone.Comms.Infra.EventBus.InMemory</Title>
+        <PackageId>WoW2.Backbone.Comms.Infra.EventBus.InMemory</PackageId>
+        <Description>Event bus implementation with In-Memory Bus</Description>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageTags>communication, infrastructure, masstransit, mediator</PackageTags>
-        <Version>8.0.0-alpha.2</Version>
+        <PackageTags>event-bus, in-memory, infrastructure</PackageTags>
+        <Version>8.0.0-alpha.0</Version>
         <Authors>WoW 2.0 Team</Authors>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageProjectUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.Infra.Mediator.MassTransit</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.Infra.Mediator.MassTransit</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.EventBus.InMemory</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.EventBus.InMemory</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageIcon>wow2.png</PackageIcon>
     </PropertyGroup>
@@ -25,8 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="MassTransit" Version="8.2.2" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0"/>
+        <PackageReference Include="MassTransit" Version="8.2.2"/>
     </ItemGroup>
 
     <ItemGroup>

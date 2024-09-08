@@ -1,3 +1,3 @@
 ## Text Completion Abstractions
 
-This package contains text completion capabilities and a provider to access it.
+This package contains in-memory event bus implementation with MediatR and MassTransit.

@@ -1,3 +1,6 @@
+using System.Reflection;
+using Backbone.Comms.Infra.Abstractions.Brokers;
+using Backbone.Comms.Infra.Mediator.MassTransit.Brokers;
 using MassTransit;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -9,30 +12,36 @@ namespace Backbone.Comms.Infra.Mediator.MassTransit.Configurations;
 public static class InfraConfigurations
 {
     /// <summary>
-    /// Configures MassTransit as a mediator pipeline allowing customization of bus configuration and in-memory bus configuration. 
+    /// Configures MassTransit services with the provided assemblies to scan for consumers.
     /// </summary>
     /// <param name="services">The service collection to add MassTransit to.</param>
-    /// <param name="busConfiguration">The bus configuration.</param>
-    /// <param name="inMemoryBusConfiguration">The in-memory bus configuration.</param>
-    public static void AddMediatorWithMassTransit(
+    /// <param name="assemblies">An array of assemblies to scan for MassTransit consumers.</param>
+    /// <param name="configuration">An action to configure MassTransit services.</param>
+    public static IServiceCollection AddMassTransitServices(
         this IServiceCollection services,
-        Action<IBusRegistrationConfigurator> busConfiguration,
-        Action<IInMemoryBusFactoryConfigurator> inMemoryBusConfiguration
+        ICollection<Assembly> assemblies,
+        Action<IBusRegistrationConfigurator, IServiceCollection>? configuration = null
     )
     {
-        services.AddMassTransit(
-            configuration =>
-            {
-                busConfiguration(configuration);
+        services.AddMassTransit(massTransitConfiguration =>
+        {
+            // Register services from the provided assemblies
+            massTransitConfiguration.AddConsumers(assemblies.ToArray());
 
-                configuration.UsingInMemory(
-                    (context, config) =>
-                    {
-                        config.ConfigureEndpoints(context);
-                        inMemoryBusConfiguration(config);
-                    }
-                );
-            }
-        );
+            configuration?.Invoke(massTransitConfiguration, services);
+        });
+
+        return services;
+    }
+
+    /// <summary>
+    /// Configures MassTransit as a mediator pipeline with the provided bus configuration and in-memory bus configuration.
+    /// </summary>
+    /// <param name="services">The service collection to add MassTransit to.</param>
+    public static IServiceCollection AddMediatorWithMassTransit(this IServiceCollection services)
+    {
+        services.AddSingleton<IMediatorBroker, MassTransitMediatorBroker>();
+
+        return services;
     }
 }

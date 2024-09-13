@@ -1,5 +1,6 @@
 using System.Reflection;
 using Backbone.Comms.Infra.Abstractions.Brokers;
+using Backbone.Comms.Infra.Abstractions.Events;
 using Backbone.Comms.Infra.EventBus.InMemory.Brokers;
 using Backbone.General.Serialization.Json.Newtonsoft.Brokers;
 using MassTransit;

@@ -10,7 +10,7 @@
         <Description>Behavior implementations for MediatR-based Mediator pipeline</Description>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageTags>communication, infrastructure, mediatr, mediator, behaviors, pipeline</PackageTags>
-        <Version>8.0.0-alpha.1</Version>
+        <Version>8.0.0-alpha.2</Version>
         <Authors>WoW 2.0 Team</Authors>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.Infra.Mediator.MediatR.Behaviors</PackageProjectUrl>
@@ -31,7 +31,7 @@
 
     <ItemGroup>
         <PackageReference Include="WoW2.Backbone.Comms.Infra.Abstractions" Version="8.0.0-alpha.7"/>
-        <PackageReference Include="WoW2.Backbone.General.Validations.Abstractions" Version="8.0.0-alpha.0"/>
+        <PackageReference Include="WoW2.Backbone.General.Validations.Abstractions" Version="8.0.0-alpha.3"/>
     </ItemGroup>
 
 </Project>

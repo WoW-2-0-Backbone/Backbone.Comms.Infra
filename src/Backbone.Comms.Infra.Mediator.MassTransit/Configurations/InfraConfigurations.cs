@@ -1,5 +1,6 @@
 using System.Reflection;
 using Backbone.Comms.Infra.Abstractions.Brokers;
+using Backbone.Comms.Infra.Abstractions.Events;
 using Backbone.Comms.Infra.Mediator.MassTransit.Brokers;
 using MassTransit;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,7 +27,7 @@ public static class InfraConfigurations
         services.AddMassTransit(massTransitConfiguration =>
         {
             // Register services from the provided assemblies
-            massTransitConfiguration.AddConsumers(assemblies.ToArray());
+            massTransitConfiguration.RegisterAllConsumers(assemblies);
 
             configuration?.Invoke(massTransitConfiguration, services);
         });
@@ -43,5 +44,31 @@ public static class InfraConfigurations
         services.AddSingleton<IMediatorBroker, MassTransitMediatorBroker>();
 
         return services;
+    }
+
+    /// <summary>
+    /// Registers all the consumers form the assembly
+    /// </summary>
+    /// <param name="busConfigurator">MassTransit bus configuration</param>
+    /// <param name="assemblies">Collection of assemblies to get consumers from</param>
+    /// <param name="predicate">A predicate to filter consumers before registration</param>
+    public static IBusRegistrationConfigurator RegisterAllConsumers(
+        this IBusRegistrationConfigurator busConfigurator,
+        ICollection<Assembly> assemblies,
+        Func<Type, bool>? predicate = default)
+    {
+        // Get all implementations of consumer
+        var consumers = assemblies
+            .SelectMany(assembly => assembly.GetTypes())
+            .Where(type => !type.IsAbstract
+                           && type.GetInterfaces().Any(implementedInterface =>
+                               implementedInterface.IsGenericType
+                               && implementedInterface.GetGenericTypeDefinition() == typeof(IEventHandler<>)));
+
+        foreach (var consumer in consumers)
+            if (predicate is null || predicate(consumer))
+                busConfigurator.AddConsumer(consumer);
+
+        return busConfigurator;
     }
 }

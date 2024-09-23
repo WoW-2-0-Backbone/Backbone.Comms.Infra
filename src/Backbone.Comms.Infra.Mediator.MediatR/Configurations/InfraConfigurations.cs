@@ -39,7 +39,7 @@ public static class InfraConfigurations
     /// <param name="services">The service collection to add MediatR to.</param>
     public static IServiceCollection AddMediatorWithMediatR(this IServiceCollection services)
     {
-        services.AddSingleton<IMediatorBroker, MediatRMediatorBroker>();
+        services.AddScoped<IMediatorBroker, MediatRMediatorBroker>();
 
         return services;
     }

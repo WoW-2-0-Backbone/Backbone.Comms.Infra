@@ -1,12 +1,10 @@
-using System.Reflection;
 using Backbone.Comms.Infra.Abstractions.Brokers;
-using Backbone.Comms.Infra.Abstractions.Events;
-using Backbone.Comms.Infra.EventBus.InMemory.Brokers;
-using Backbone.General.Serialization.Json.Newtonsoft.Brokers;
+using Backbone.Comms.Infra.EventBus.MassTransit.Brokers;
+using Backbone.Language.Features.Serialization.Json.Newtonsoft.Brokers;
 using MassTransit;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Backbone.Comms.Infra.EventBus.InMemory.Configurations;
+namespace Backbone.Comms.Infra.EventBus.MassTransit.DependencyInjection.Configurations;
 
 /// <summary>
 /// Provides extension methods to configure the event bus.

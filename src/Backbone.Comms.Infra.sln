@@ -6,11 +6,31 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.Infra.Mediat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.Infra.Mediator.MassTransit", "Backbone.Comms.Infra.Mediator.MassTransit\Backbone.Comms.Infra.Mediator.MassTransit.csproj", "{1AEDEA88-B6AA-4476-87D2-07A6B21410EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.Infra.EventBus.InMemory", "Backbone.Comms.Infra.EventBus.InMemory\Backbone.Comms.Infra.EventBus.InMemory.csproj", "{13E10A56-0DC1-4D16-A4C6-354E3CDD61D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.Infra.EventBus.MassTransit", "Backbone.Comms.Infra.EventBus.MassTransit\Backbone.Comms.Infra.EventBus.MassTransit.csproj", "{13E10A56-0DC1-4D16-A4C6-354E3CDD61D1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.Infra.EventBus.RabbitMq", "Backbone.Comms.Infra.EventBus.RabbitMq\Backbone.Comms.Infra.EventBus.RabbitMq.csproj", "{13FCD2A5-0CC4-49F9-B843-2FC9AABB7BF2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.Infra.Mediator.MediatR.Behaviors", "Backbone.Comms.Infra.Mediator.MediatR.Behaviors\Backbone.Comms.Infra.Mediator.MediatR.Behaviors.csproj", "{CAFDD26C-1DBC-42BC-8FEF-E2412E7B56A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventBus", "EventBus", "{C7E1CCFC-71A4-4D7B-B1B5-DD556B836319}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mediator", "Mediator", "{0CED6646-62CA-41B7-B26F-7B0C3DB71856}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MassTransit", "MassTransit", "{12849F87-3C07-4B96-A91E-B823E5AF8236}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MassTransit", "MassTransit", "{735DC76E-B647-43B8-AF20-124A2DFBE11E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMq", "RabbitMq", "{C35E8C75-8461-483E-8A54-41DA8B29486D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MediatR", "MediatR", "{4F26D902-65F1-4360-A76C-8843F64BEE68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.Infra.EventBus.MassTransit.DependencyInjection", "Backbone.Comms.Infra.EventBus.MassTransit.DependencyInjection\Backbone.Comms.Infra.EventBus.MassTransit.DependencyInjection.csproj", "{760AFEDC-0936-4E33-AF57-7225071F5782}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.Infra.EventBus.RabbitMq.DependencyInjection", "Backbone.Comms.Infra.EventBus.RabbitMq.DependencyInjection\Backbone.Comms.Infra.EventBus.RabbitMq.DependencyInjection.csproj", "{90DE5B52-3AB1-4982-AFBF-BA328A697E7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.Infra.Mediator.MassTransit.DependencyInjection", "Backbone.Comms.Infra.Mediator.MassTransit.DependencyInjection\Backbone.Comms.Infra.Mediator.MassTransit.DependencyInjection.csproj", "{FB558D7C-2050-41E1-B0CC-4581414C1FE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone.Comms.Infra.Mediator.MediatR.DependencyInjection", "Backbone.Comms.Infra.Mediator.MediatR.DependencyInjection\Backbone.Comms.Infra.Mediator.MediatR.DependencyInjection.csproj", "{089F5873-C043-46AC-B824-D79DE591671B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,5 +62,36 @@ Global
 		{CAFDD26C-1DBC-42BC-8FEF-E2412E7B56A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAFDD26C-1DBC-42BC-8FEF-E2412E7B56A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAFDD26C-1DBC-42BC-8FEF-E2412E7B56A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{760AFEDC-0936-4E33-AF57-7225071F5782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{760AFEDC-0936-4E33-AF57-7225071F5782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{760AFEDC-0936-4E33-AF57-7225071F5782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{760AFEDC-0936-4E33-AF57-7225071F5782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90DE5B52-3AB1-4982-AFBF-BA328A697E7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90DE5B52-3AB1-4982-AFBF-BA328A697E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90DE5B52-3AB1-4982-AFBF-BA328A697E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90DE5B52-3AB1-4982-AFBF-BA328A697E7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB558D7C-2050-41E1-B0CC-4581414C1FE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB558D7C-2050-41E1-B0CC-4581414C1FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB558D7C-2050-41E1-B0CC-4581414C1FE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB558D7C-2050-41E1-B0CC-4581414C1FE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{089F5873-C043-46AC-B824-D79DE591671B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{089F5873-C043-46AC-B824-D79DE591671B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{089F5873-C043-46AC-B824-D79DE591671B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{089F5873-C043-46AC-B824-D79DE591671B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{12849F87-3C07-4B96-A91E-B823E5AF8236} = {0CED6646-62CA-41B7-B26F-7B0C3DB71856}
+		{735DC76E-B647-43B8-AF20-124A2DFBE11E} = {C7E1CCFC-71A4-4D7B-B1B5-DD556B836319}
+		{C35E8C75-8461-483E-8A54-41DA8B29486D} = {C7E1CCFC-71A4-4D7B-B1B5-DD556B836319}
+		{4F26D902-65F1-4360-A76C-8843F64BEE68} = {0CED6646-62CA-41B7-B26F-7B0C3DB71856}
+		{4F9ECDAF-ADB6-4C4F-945D-F62EEEAF4888} = {4F26D902-65F1-4360-A76C-8843F64BEE68}
+		{CAFDD26C-1DBC-42BC-8FEF-E2412E7B56A1} = {4F26D902-65F1-4360-A76C-8843F64BEE68}
+		{1AEDEA88-B6AA-4476-87D2-07A6B21410EB} = {12849F87-3C07-4B96-A91E-B823E5AF8236}
+		{13E10A56-0DC1-4D16-A4C6-354E3CDD61D1} = {735DC76E-B647-43B8-AF20-124A2DFBE11E}
+		{13FCD2A5-0CC4-49F9-B843-2FC9AABB7BF2} = {C35E8C75-8461-483E-8A54-41DA8B29486D}
+		{760AFEDC-0936-4E33-AF57-7225071F5782} = {735DC76E-B647-43B8-AF20-124A2DFBE11E}
+		{90DE5B52-3AB1-4982-AFBF-BA328A697E7B} = {C35E8C75-8461-483E-8A54-41DA8B29486D}
+		{FB558D7C-2050-41E1-B0CC-4581414C1FE1} = {12849F87-3C07-4B96-A91E-B823E5AF8236}
+		{089F5873-C043-46AC-B824-D79DE591671B} = {4F26D902-65F1-4360-A76C-8843F64BEE68}
 	EndGlobalSection
 EndGlobal

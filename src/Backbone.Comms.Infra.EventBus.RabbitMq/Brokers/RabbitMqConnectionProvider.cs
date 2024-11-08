@@ -17,6 +17,7 @@ public class RabbitMqConnectionProvider(IOptions<RabbitMqConnectionSettings> rab
 
     private IConnection? _connection;
 
+    /// <inheritdoc />
     public async ValueTask<IChannel> CreateChannelAsync()
     {
         _connection ??= await _connectionFactory.CreateConnectionAsync();

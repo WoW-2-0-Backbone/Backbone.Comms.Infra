@@ -5,12 +5,12 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <Title>WoW2.Backbone.Comms.Infra.Mediator.MediatR</Title>
-        <PackageId>WoW2.Backbone.Comms.Infra.Mediator.MediatR</PackageId>
-        <Description>MediatR implementation for Mediator pipeline</Description>
+        <Title>WoW2.Backbone.Comms.Infra.Mediator.MediatR.DependencyInjection</Title>
+        <PackageId>WoW2.Backbone.Comms.Infra.Mediator.MediatR.DependencyInjection</PackageId>
+        <Description>Dependency Injection support for MediatR Mediator</Description>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageTags>communication, infrastructure, mediatr, mediator</PackageTags>
-        <Version>8.0.0-alpha.7</Version>
+        <PackageTags>mediator, mediatr, dependency-injection, infrastructure</PackageTags>
+        <Version>8.0.0-alpha.0</Version>
         <Authors>WoW 2.0 Team</Authors>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.Infra</PackageProjectUrl>
@@ -25,7 +25,12 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="WoW2.Backbone.Comms.Infra.Abstractions" Version="8.0.0-alpha.7"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="WoW2.Backbone.Comms.Infra.Mediator.MediatR" Version="8.0.0-alpha.7"/>
+        <PackageReference Include="WoW2.Backbone.Comms.Infra.Mediator.MediatR.Behaviors" Version="8.0.0-alpha.3"/>
     </ItemGroup>
 
 </Project>

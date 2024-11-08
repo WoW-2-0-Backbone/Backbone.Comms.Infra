@@ -1,8 +1,8 @@
 using System.Text;
 using Backbone.Comms.Infra.Abstractions.Brokers;
 using Backbone.Comms.Infra.Abstractions.Events;
-using Backbone.General.Serialization.Json.Abstractions.Brokers;
-using Backbone.General.Serialization.Json.Abstractions.Constants;
+using Backbone.Language.Features.Serialization.Json.Abstractions.Brokers;
+using Backbone.Language.Features.Serialization.Json.Abstractions.Constants;
 using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
 
@@ -18,6 +18,7 @@ public class RabbitMqEventBusBroker(
     IMediatorBroker mediatorBroker
 ) : IEventBusBroker
 {
+    /// <inheritdoc />
     public async ValueTask PublishLocalAsync<TEvent>(
         TEvent eventContext,
         EventOptions eventOptions = default,
@@ -27,10 +28,11 @@ public class RabbitMqEventBusBroker(
         await mediatorBroker.SendAsync(eventContext, eventOptions, cancellationToken);
     }
 
-    async ValueTask IEventBusBroker.PublishAsync<TEvent>(
+    /// <inheritdoc />
+    public async ValueTask PublishAsync<TEvent>(
         TEvent eventContext,
         EventOptions eventOptions,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken) where TEvent : EventBase
     {
         var properties = new BasicProperties
         {
@@ -51,7 +53,7 @@ public class RabbitMqEventBusBroker(
 
         var channel = await rabbitMqConnectionProvider.CreateChannelAsync();
 
-        var body = Encoding.UTF8.GetBytes(await jsonSerializer.SerializeAsync(eventContext,
+        var body = Encoding.UTF8.GetBytes(jsonSerializer.Serialize(eventContext,
             JsonSerializationConstants.GeneralSerializationWithTypeHandlingSettings));
         
         await channel.BasicPublishAsync(eventOptions.Exchange, eventOptions.RoutingKey, properties, body, cancellationToken: cancellationToken);

@@ -10,11 +10,11 @@
         <Description>MassTransit implementation for Mediator pipeline</Description>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageTags>communication, infrastructure, masstransit, mediator</PackageTags>
-        <Version>8.0.0-alpha.6</Version>
+        <Version>8.0.0-alpha.8</Version>
         <Authors>WoW 2.0 Team</Authors>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageProjectUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.Infra.Mediator.MassTransit</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.Infra.Mediator.MassTransit</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.Infra</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.Infra</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageIcon>wow2.png</PackageIcon>
     </PropertyGroup>
@@ -26,7 +26,6 @@
 
     <ItemGroup>
         <PackageReference Include="MassTransit" Version="8.2.5" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0"/>
     </ItemGroup>
 
     <ItemGroup>

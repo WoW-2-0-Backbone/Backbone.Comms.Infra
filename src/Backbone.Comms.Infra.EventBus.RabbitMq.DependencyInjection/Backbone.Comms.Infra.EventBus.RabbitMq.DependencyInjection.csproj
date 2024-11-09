@@ -5,12 +5,12 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <Title>WoW2.Backbone.Comms.Infra.Mediator.MediatR</Title>
-        <PackageId>WoW2.Backbone.Comms.Infra.Mediator.MediatR</PackageId>
-        <Description>MediatR implementation for Mediator pipeline</Description>
+        <Title>WoW2.Backbone.Comms.Infra.EventBus.RabbitMq.DependencyInjection</Title>
+        <PackageId>WoW2.Backbone.Comms.Infra.EventBus.RabbitMq.DependencyInjection</PackageId>
+        <Description>Dependency Injection support for RabbitMQ Event Bus</Description>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageTags>communication, infrastructure, mediatr, mediator</PackageTags>
-        <Version>8.0.0-alpha.7</Version>
+        <PackageTags>event-bus, rabbitmq, dependency-injection, infrastructure</PackageTags>
+        <Version>8.0.0-alpha.0</Version>
         <Authors>WoW 2.0 Team</Authors>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.Infra</PackageProjectUrl>
@@ -25,7 +25,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="WoW2.Backbone.Comms.Infra.Abstractions" Version="8.0.0-alpha.7"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include=" WoW2.Backbone.Comms.Infra.EventBus.RabbitMq" Version="8.0.0-alpha.1"/>
     </ItemGroup>
 
 </Project>

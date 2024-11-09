@@ -2,7 +2,7 @@ using Backbone.Comms.Infra.Abstractions.Brokers;
 using Backbone.Comms.Infra.EventBus.RabbitMq.Brokers;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Backbone.Comms.Infra.EventBus.RabbitMq.Configurations;
+namespace Backbone.Comms.Infra.EventBus.RabbitMq.DependencyInjection.Configurations;
 
 /// <summary>
 /// Provides extension methods to configure the event bus.

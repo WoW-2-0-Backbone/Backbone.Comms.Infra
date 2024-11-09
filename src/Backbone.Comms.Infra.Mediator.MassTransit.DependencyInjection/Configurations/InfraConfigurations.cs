@@ -5,7 +5,7 @@ using Backbone.Comms.Infra.Mediator.MassTransit.Brokers;
 using MassTransit;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Backbone.Comms.Infra.Mediator.MassTransit.Configurations;
+namespace Backbone.Comms.Infra.Mediator.MassTransit.DependencyInjection.Configurations;
 
 /// <summary>
 /// Provides extension methods to configure the mediator pipeline using MassTransit.
@@ -17,17 +17,19 @@ public static class InfraConfigurations
     /// </summary>
     /// <param name="services">The service collection to add MassTransit to.</param>
     /// <param name="assemblies">An array of assemblies to scan for MassTransit consumers.</param>
+    /// <param name="predicate">A predicate to register handlers to bus.</param>
     /// <param name="configuration">An action to configure MassTransit services.</param>
     public static IServiceCollection AddMassTransitServices(
         this IServiceCollection services,
         ICollection<Assembly> assemblies,
+        Func<Type, bool>? predicate = default,
         Action<IBusRegistrationConfigurator, IServiceCollection>? configuration = null
     )
     {
         services.AddMassTransit(massTransitConfiguration =>
         {
             // Register services from the provided assemblies
-            massTransitConfiguration.RegisterAllConsumers(assemblies);
+            massTransitConfiguration.RegisterAllConsumers(assemblies, predicate);
 
             configuration?.Invoke(massTransitConfiguration, services);
         });
@@ -41,7 +43,7 @@ public static class InfraConfigurations
     /// <param name="services">The service collection to add MassTransit to.</param>
     public static IServiceCollection AddMediatorWithMassTransit(this IServiceCollection services)
     {
-        services.AddSingleton<IMediatorBroker, MassTransitMediatorBroker>();
+        services.AddScoped<IMediatorBroker, MassTransitMediatorBroker>();
 
         return services;
     }

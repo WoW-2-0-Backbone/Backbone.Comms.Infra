@@ -10,11 +10,11 @@
         <Description>Event bus implementation with RabbitMQ</Description>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageTags>event-bus, rabbitmq, communication, infra</PackageTags>
-        <Version>8.0.0-alpha.0</Version>
+        <Version>8.0.0-alpha.1</Version>
         <Authors>WoW 2.0 Team</Authors>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageProjectUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.Infra.EventBus.RabbitMq</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.Infra.EventBus.RabbitMq</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.Infra</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/WoW-2-0-Backbone/Backbone.Comms.Infra</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageIcon>wow2.png</PackageIcon>
     </PropertyGroup>
@@ -32,8 +32,8 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="WoW2.Backbone.Language.Features.Serialization.Json.Newtonsoft" Version="8.0.0-alpha.2" />
         <PackageReference Include="WoW2.Backbone.Comms.Infra.Abstractions" Version="8.0.0-alpha.7"/>
-        <PackageReference Include="WoW2.Backbone.General.Serialization.Json.Abstractions" Version="8.0.0-alpha.4"/>
     </ItemGroup>
 
 </Project>

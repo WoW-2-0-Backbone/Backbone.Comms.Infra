@@ -1,6 +1,5 @@
-using Backbone.General.Validations.Abstractions.Exceptions;
+using Backbone.General.Validations.FluentValidation.Exceptions;
 using FluentValidation;
-using FluentValidation.TestHelper;
 using MediatR;
 
 namespace Backbone.Comms.Infra.Mediator.MediatR.Behaviors.PipelineBehaviors;
@@ -24,7 +23,7 @@ public class RequestValidationBehavior<TRequest, TResponse>(IEnumerable<IValidat
             .ToList();
 
         if (failures.Any())
-            throw new AppValidationException(new ValidationException(failures));
+            throw new AppFluentValidationException(failures);
 
         return await next();
     }
@@ -48,7 +47,7 @@ public class VoidRequestValidationBehavior<TRequest, TResponse>(IEnumerable<IVal
             .ToList();
 
         if (failures.Any())
-            throw new AppValidationException(new ValidationException(failures));
+            throw new AppFluentValidationException(failures);
 
         return await next();
     }
